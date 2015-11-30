@@ -5,10 +5,14 @@ header {
   font-family: Abril Fatface;
   font-style: italic;
   background: black;
+  text-shadow: 2px 2px white;
 }
 
 body {
   margin: 0 auto;
+  background-image: url("http://www.westcoasttrustsestates.com/files/2015/04/I-Stock-Basketball-Court.jpg");
+  background-size: cover;
+  text-shadow: 1px 1px white;
 
 }
 
@@ -21,8 +25,16 @@ body {
 
 #gifCentral {
   text-align: center;
-  height: 100px;
+  height: 330px;
+  width: 500px;
 }
+
+#missed {
+ /* height: 100px;
+  width: 150px;*/
+  /*border-radius: 8px;*/
+}
+
 
 #playerlist {
   text-align: center;
