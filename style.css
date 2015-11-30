@@ -25,15 +25,16 @@ body {
 
 #gifCentral {
   text-align: center;
-  height: 330px;
-  width: 500px;
-  margin-left: 450px;
+  /*height: 330px;
+  width: 500px;*/
+  margin-left: 300px;
 }
 
-#missed {
- /* height: 100px;
-  width: 150px;*/
-  /*border-radius: 8px;*/
+#missed, #made {
+ visibility: hidden;
+ text-align: center;
+ max-height: 300px;
+ width: auto;
 }
 
 
