@@ -2,7 +2,6 @@ $(function(){
 
   console.log("main js loaded.");
 
-  // alert("Let the games begin");
   turn = "player1";
   winner = null;
   winresult = false;
@@ -55,15 +54,19 @@ $(function(){
     //if you select lebron, set playerOne equal.
     if($("#playersToChoose").val() == "lebron") {
       playerOne = lebron;
+      $('#player1').css('background-color', '#a84551');
     }
     else if($("#playersToChoose").val() == "steph") {
       playerOne = steph;
+      $('#player1').css('background-color', 'gold');
     }
     else if($("#playersToChoose").val() == "durant") {
       playerOne = durant;
+      $('#player1').css('background-color', 'white');
     }
     else if($("#playersToChoose").val() == "kobe"){
       playerOne = kobe;
+      $('#player1').css('background-color', '#b19cd9');
     }
 
     // playerOne = $("#playersToChoose").val();
@@ -71,26 +74,32 @@ $(function(){
     //temporary alerts for testing
     alert("Player 1 chose " + $("#playersToChoose").val());
     displayMessage("Player 2, your turn to pick a player");
-    $('#player1 h2').text($("#playersToChoose").val());
+    $('#player1 h2').text($("#playersToChoose").val().toUpperCase());
 
   });
 
   $('#playerSelect2').click(function() {
     if($("#playersToChoose").val() == "lebron") {
       playerTwo = lebron;
+      $('#player2').css('background-color', '#a84551');
+
     }
     else if($("#playersToChoose").val() == "steph") {
       playerTwo = steph;
+      $('#player2').css('background-color', 'gold');
     }
     else if($("#playersToChoose").val() == "durant") {
       playerTwo = durant;
+      $('#player2').css('background-color', 'white');
     }
     else if($("#playersToChoose").val() == "kobe"){
       playerTwo = kobe;
+      $('#player2').css('background-color', '#b19cd9');
     }
     $(this).attr("disabled","disabled");
     alert("Player 2 chose " + $("#playersToChoose").val());
-    $('#player2 h2').text($("#playersToChoose").val());
+    $('#player2 h2').text($("#playersToChoose").val().toUpperCase());
+    $('#playerlist h2').text("First one to 21 wins the game!");
     displayMessage("Game on! Player 1, start us off.");
   });
 
