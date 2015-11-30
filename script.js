@@ -143,7 +143,8 @@ $('#shoot2').click(function() {
          alert("Player 2 scored " + player2Points + " points");
          //display the div for a MAKE: append and show
         $('#gifCentral').append('<img id="made" src="http://24.media.tumblr.com/bc5d571f93d62e8ca19aabca7bcff00b/tumblr_mf6j7pgcGV1qbjsl3o1_500.gif"/>');
-        $('#made').show();
+        $('#missed').hide();
+        $('#made').toggle();
          //if it's 0 or 2, add it to the player1Count
          player2Count = player2Count + player2Points;
 
@@ -153,7 +154,8 @@ $('#shoot2').click(function() {
             player2Points = 0;
             //display div for a MISS: append and show
         $('#gifCentral').append('<img id = "missed" src = "http://cdn0.sbnation.com/assets/3931087/parkerft.gif"/>');
-        $('#missed').show();
+        $('#missed').toggle();
+        $('#made').hide();
         }
         alert("Player 2 scored " + player2Points + " points");
     //display the score in the div at bottom of player1
