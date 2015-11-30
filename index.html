@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Project #1: NBA Jam</title>
+    <link href='https://fonts.googleapis.com/css?family=Abril+Fatface'></link>
+    <link rel="stylesheet" type="text/css" href="style.css"></link>
+
+  </head>
+  <body>
+    <header>NBA Jam Lucky7s</header>
+    <div id = "messages"></div>
+
+    <div class="container">
+      <!-- GIFS illustrating a made/missed shot all go here -->
+      <!-- Hide until shot is made or missed; jQuery -->
+      <div id = "gifCentral">Gifs go here!</div>
+
+      <div id = "playerlist">
+        <h2>Pick a baller below</h2>
+        <select id = "playersToChoose">
+          <option value="lebron">LeBron James</option>
+          <option value="steph">Steph Curry</option>
+          <option value="durant">Kevin Durant</option>
+          <option value="kobe">Kobe Bryant</option>
+          <input type="submit" id = "playerSelect" value="Select Player">
+        </select>
+
+      </div>
+
+      <div id = "player1">
+       <h3> Player 1 here</h3>
+       <p>Pick your shot below!</p>
+       <select id = "player1Shot">
+        <option value="dunk">Dunk</option>
+        <option value="long2">Long 2-pointer</option>
+        <option value="corner3">Corner 3-pointer</option>
+        <option value="long3">Long 3-pointer</option>
+        <input type="submit" value="Shoot">
+       </select>
+       <div id = "player1Score">
+          <h4>Score: </h4>
+        </div>
+      </div>
+
+
+      <div id = "player2">
+        <h3>Player 2 over here!</h3>
+        <p>Pick your shot below!</p>
+        <select id = "player2Shot">
+          <option value="dunk">Dunk</option>
+          <option value="long2">Long 2-pointer</option>
+          <option value="corner3">Corner 3-pointer</option>
+          <option value="long3">Long 3-pointer</option>
+          <input type="submit" value="Shoot">
+        </select>
+        <div id = "player2Score">
+          <h4>Score: </h4>
+        </div>
+      </div>
+
+    </div>
+
+    <footer></footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

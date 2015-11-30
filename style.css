@@ -1,0 +1,71 @@
+header {
+  text-align: center;
+  color: orange;
+  font-size: 40px;
+  font-family: Abril Fatface;
+  font-style: italic;
+  background: black;
+}
+
+body {
+  margin: 0 auto;
+
+}
+
+#messages {
+  text-align: center;
+  font-size: 30px;
+  color: orange;
+  font-family: Abril Fatface;
+}
+
+#gifCentral {
+  text-align: center;
+  height: 100px;
+}
+
+#playerlist {
+  text-align: center;
+  height: 100px;
+  width: 50%;
+  margin-left: 300px;
+  background: orange;
+  font-family: Abril Fatface;
+}
+
+#playersToChoose {
+  width: 200px;
+  height: 300px;
+}
+
+#player1 {
+  float: left;
+  text-align: center;
+  background: orange;
+  width: 35%;
+  height: 200px;
+  margin: 100px 50px;
+  padding: 20px;
+  border-radius: 10px;
+  font-family: Abril Fatface;
+}
+
+#player2 {
+  float: left;
+  text-align: center;
+  background: orange;
+  width: 35%;
+  height: 200px;
+  margin: 100px 50px;
+  padding: 20px;
+  border-radius: 10px;
+  font-family: Abril Fatface;
+}
+
+#player1Shot {
+
+}
+
+#player2Shot {
+
+}
