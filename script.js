@@ -51,22 +51,47 @@ $(function(){
 
   //Selecting your player, storing that variable
   $('#playerSelect1').click(function() {
-    playerOne = $("#playersToChoose").val();
+    //testing here by hard-coding LeBron
+    //if you select lebron, set playerOne equal.
+    if($("#playersToChoose").val() == "lebron") {
+      playerOne = lebron;
+    }
+    else if($("#playersToChoose").val() == "steph") {
+      playerOne = steph;
+    }
+    else if($("#playersToChoose").val() == "durant") {
+      playerOne = durant;
+    }
+    else if($("#playersToChoose").val() == "kobe"){
+      playerOne = kobe;
+    }
+
+    // playerOne = $("#playersToChoose").val();
     $(this).attr("disabled","disabled");
     //temporary alerts for testing
-    alert("Player 1 chose " + playerOne);
+    alert("Player 1 chose " + $("#playersToChoose").val());
     displayMessage("Player 2, your turn to pick a player");
-    $('#player1 h2').text(playerOne);
+    $('#player1 h2').text($("#playersToChoose").val());
 
   });
 
   $('#playerSelect2').click(function() {
-    playerTwo = $("#playersToChoose").val();
+    if($("#playersToChoose").val() == "lebron") {
+      playerTwo = lebron;
+    }
+    else if($("#playersToChoose").val() == "steph") {
+      playerTwo = steph;
+    }
+    else if($("#playersToChoose").val() == "durant") {
+      playerTwo = durant;
+    }
+    else if($("#playersToChoose").val() == "kobe"){
+      playerTwo = kobe;
+    }
     $(this).attr("disabled","disabled");
-    alert("Player 2 chose " + playerTwo);
-    $('#player2 h2').text(playerTwo);
-
-    displayMessage("Game on!");
+    alert("Player 2 chose " + $("#playersToChoose").val());
+    $('#player2 h2').text($("#playersToChoose").val());
+    displayMessage("Game on! Player 1, start us off.");
   });
 
 
@@ -79,7 +104,7 @@ $(function(){
       //calculate probability: Math.random(dunk), 0 or 2
       // player1Points = Math.random * this.dunk;
       //NOTE: dunk hard coded as 2 below, for testing purposes.
-      player1Points = 2;
+      player1Points = Math.random() * playerOne.dunk;
         if(player1Points > dunkAvg ) {
           //if your percentage is greater than league avg, you make it
           //and you get 2 points.
@@ -102,7 +127,7 @@ $(function(){
     }
     //case #2: long 2. it's either 0 or 2.
     if($('#player1Shot').val() == 'long2') {
-      player1Points = Math.random() * this.long2;
+      player1Points = Math.random() * playerOne.long2;
         if(player1Points > long2Avg) {
           player1Points = 2;
           player1Count += player1Points;
@@ -114,7 +139,7 @@ $(function(){
     }
     //case #3: corner 3. it's either 0 or 3.
     if($('#player1Shot').val() == 'corner3') {
-      player1Points = Math.random()* this.corner3;
+      player1Points = Math.random()* playerOne.corner3;
         if(player1Points > corner3Avg) {
           //if it's 3 or 0, add it to player1Count
           player1Points = 3;
@@ -127,7 +152,7 @@ $(function(){
     }
     //case #4: long 3. it's either 0 or 3.
     if($('#player1Shot').val() == 'long3') {
-      player1Points = Math.random() * this.long3;
+      player1Points = Math.random() * playerOne.long3;
         if(player1Points > long3Avg) {
           player1Points = 3;
           player1Count += player1Points;
@@ -152,9 +177,9 @@ $(function(){
 $('#shoot2').click(function() {
     //case #1: dunk. it's either 0 or 2
     if($('#player2Shot').val() == 'dunk') {
-      player2Points = Math.random() * this.dunk;
+      player2Points = Math.random() * playerTwo.dunk;
       //calculate probability: Math.random(dunk), 0 or 2
-        if(player2Points > dunkAvg ) {
+        if(player2Points > dunkAvg) {
          //display the div for a MAKE: append and show
         // $('#gifCentral').append('<img id="made" src="http://24.media.tumblr.com/bc5d571f93d62e8ca19aabca7bcff00b/tumblr_mf6j7pgcGV1qbjsl3o1_500.gif"/>');
         // $('#missed').hide();
@@ -180,7 +205,7 @@ $('#shoot2').click(function() {
     }
     //case #2: long 2. it's either 0 or 2.
     if($('#player2Shot').val() == 'long2') {
-      player2Points = Math.random() * this.long2;
+      player2Points = Math.random() * playerTwo.long2;
         if(player2Points > long2Avg) {
           player2Points = 2;
           player2Count += player2Points;
@@ -192,9 +217,10 @@ $('#shoot2').click(function() {
     }
     //case #3: corner 3. it's either 0 or 3.
     if($('#player2Shot').val() == 'corner3') {
-      player2Points = Math.random() * this.corner3;
+      player2Points = Math.random() * playerTwo.corner3;
         if(player2Points > corner3Avg) {
           //if it's 3 or 0, add it to player1Count
+          player2Points = 3;
           player2Count += player2Points;
         }
         else {
@@ -204,8 +230,9 @@ $('#shoot2').click(function() {
     }
     //case #4: long 3. it's either 0 or 3.
     if($('#player2Shot').val() == 'long3') {
-      player2Points = Math.random() * this.long3;
+      player2Points = Math.random() * playerTwo.long3;
         if(player2Points > long3Avg) {
+          player2Points = 3;
           player2Count += player2Points;
         }
         else {
