@@ -4,13 +4,14 @@ header {
   font-size: 40px;
   font-family: Abril Fatface;
   font-style: italic;
-  background: black;
+  background: white;
+  opacity: 0.85;
   text-shadow: 2px 2px white;
 }
 
 body {
   margin: 0 auto;
-  background-image: url("http://www.westcoasttrustsestates.com/files/2015/04/I-Stock-Basketball-Court.jpg");
+  background-image: url("http://datcmedia.com/eslagowski/json-mustache/basketball.jpg");
   background-size: cover;
   text-shadow: 1px 1px white;
 
@@ -19,7 +20,7 @@ body {
 #messages {
   text-align: center;
   font-size: 30px;
-  color: orange;
+  color: #FA8320;
   font-family: Abril Fatface;
 }
 
@@ -27,7 +28,7 @@ body {
   text-align: center;
   /*height: 330px;
   width: 500px;*/
-  margin-left: 300px;
+  margin-left: 400px;
 }
 
 #missed, #made {
@@ -44,8 +45,10 @@ body {
   height: 100px;
   width: 50%;
   margin-left: 300px;
-  background: orange;
+  background: #FA8320;
   font-family: Abril Fatface;
+  border-radius: 10px;
+  opacity: 0.85;
 }
 
 #playersToChoose {
@@ -56,25 +59,27 @@ body {
 #player1 {
   float: left;
   text-align: center;
-  background: orange;
+  background: #FA8320;
   width: 35%;
   height: 200px;
-  margin: 100px 50px;
-  padding: 20px;
+  margin: 50px;
+  padding: 5px;
   border-radius: 10px;
   font-family: Abril Fatface;
+  opacity: 0.85;
 }
 
 #player2 {
   float: left;
   text-align: center;
-  background: orange;
+  background: #FA8320;
   width: 35%;
   height: 200px;
-  margin: 100px 50px;
-  padding: 20px;
+  margin: 50px;
+  padding: 5px;
   border-radius: 10px;
   font-family: Abril Fatface;
+  opacity: 0.85;
 }
 
 

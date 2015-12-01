@@ -195,8 +195,8 @@ $(function(){
     // $(this).attr("disabled","disabled");
     // $("#player2Shot").prop('disabled', false);
     //hard-coded turn switch below
-    changeTurn();
-    checkForWinner(player1Count, player2Count);
+    // checkForWinner();
+    // changeTurn();
     displayMessage("It's Player 2's turn to shoot!");
   });
 
@@ -284,8 +284,8 @@ $('#shoot2').click(function() {
     $('#player2Score').text(player2Count);
     // $(this).attr("disabled","disabled")
     // $("#player1Shot").prop('disabled', false);
-    changeTurn();
-    checkForWinner(player1Count, player2Count);
+    // checkForWinner();
+    // changeTurn();
     displayMessage("It's Player 1's turn to shoot!");
 
   });
@@ -297,31 +297,34 @@ $('#shoot2').click(function() {
 
   //Making another shot selection
 
-  function nextMove() {
+  // function nextMove() {
 
-      if(winner !== null) {
-        displayMessage(winner + " already won the game");
-      } else {
-          changeTurn();
-      }
+  //     if(winner !== null) {
+  //       displayMessage(winner + " already won the game");
+  //     } else {
+  //         changeTurn();
+  //     }
 
-  };
+  // };
 
   //Changing turns
 
   function changeTurn() {
     winresult = false;
-    if(winresult = true) {
-      displayMessage("Congrats, " + turn + ", you won!");
-      winner = turn;
+    // if(winresult = true) {
+    //   displayMessage("Congrats, " + turn + ", you won!");
+    //   winner = turn;
+    // }
+    // if(player1Count || player2Count >= 21) {
+    //   displayMessage("Game over!");
+    // }
+    if(turn == "player1") {
+      turn ==="player2";
+      displayMessage("It's Player 2's turn to shoot!");
     }
-    if(turn === "player1") {
-      turn === "player2";
-      displayMessage("It's " + turn + "'s turn to shoot!");
-    }
-    else {
-      turn === "player1";
-      displayMessage("It's " + turn + "'s turn to shoot!");
+    else if(turn == "player2") {
+      turn ==="player1";
+      displayMessage("It's Player 1's turn to shoot!");
     }
   };
 
@@ -329,11 +332,12 @@ $('#shoot2').click(function() {
   //Checking for a winner if count >=21,
   //this is called back in changeturn to see if a win has occurred.
 
-  function checkForWinner(player1Count, player2Count) {
-    if(player1Count >=6 || player2Count >= 6) {
-      winresult = true;
-      return true;
-    }
-  };
+  // function checkForWinner(player1Count, player2Count) {
+  //   winresult = false;
+  //   if(player1Count || player2Count >= 6) {
+  //     winresult = true;
+  //     return true;
+  //   }
+  // };
 
 });
