@@ -114,8 +114,8 @@ $(function(){
           //and you get 2 points.
           player1Points = 2;
          //display the div for a MAKE: visible css
-          $('#missed').css('visibility', 'hidden');
-          $('#made').css('visibility', 'visible')
+          $('#made').show();
+          $('#missed').hide();
 
            //if it's 0 or 2, add it to the player1Count
          player1Count += player1Points;
@@ -123,8 +123,8 @@ $(function(){
         else {
             player1Points = 0;
             //display div for a MISS: append and show
-            $('#made').css('visibility', 'hidden');
-            $('#missed').css('visibility', 'visible');
+            $('#missed').show();
+            $('#made').hide();
 
         }
     //display the score in the div at bottom of player1
@@ -137,14 +137,13 @@ $(function(){
         if(player1Points > long2Avg) {
           player1Points = 2;
           player1Count += player1Points;
-          $('#missed').css('visibility', 'hidden');
-          $('#made').css('visibility', 'visible');
-
+          $('#made').show();
+          $('#missed').hide();
         }
         else {
           player1Points = 0;
-          $('#made').css('visibility', 'hidden');
-          $('#missed').css('visibility', 'visible');
+          $('#missed').show();
+          $('#made').hide();
 
         }
 
@@ -156,14 +155,14 @@ $(function(){
           //if it's 3 or 0, add it to player1Count
           player1Points = 3;
           player1Count += player1Points;
-          $('#missed').css('visibility', 'hidden');
-          $('#made').css('visibility', 'visible');
+          $('#made').show();
+          $('#missed').hide();
 
         }
         else {
           player1Points = 0;
-          $('#made').css('visibility', 'hidden');
-          $('#missed').css('visibility', 'visible');
+          $('#missed').show();
+          $('#made').hide();
 
         }
 
@@ -174,15 +173,13 @@ $(function(){
         if(player1Points > long3Avg) {
           player1Points = 3;
           player1Count += player1Points;
-          $('#missed').css('visibility', 'hidden');
-          $('#made').css('visibility', 'visible');
-
+          $('#made').show();
+          $('#missed').hide();
         }
         else {
           player1Points = 0;
-          $('#made').css('visibility', 'hidden');
-          $('#missed').css('visibility', 'visible');
-
+          $('#missed').show();
+          $('#made').hide();
         }
 
     }
@@ -207,20 +204,17 @@ $('#shoot2').click(function() {
       player2Points = Math.random() * playerTwo.dunk;
       //calculate probability: Math.random(dunk), 0 or 2
         if(player2Points > dunkAvg) {
-         //display the div for a MAKE: append and show
-          $('#missed').css('visibility', 'hidden');
-          $('#made').css('visibility', 'visible');
          //if it's 0 or 2, add it to the player1Count
          player2Points = 2;
          player2Count += player2Points;
-
-         //try returning your values so they can be accessed by alert
+         $('#made').show();
+         $('#missed').hide();
         }
         else {
             player2Points = 0;
             //display div for a MISS: append and show
-        $('#made').css('visibility', 'hidden');
-        $('#missed').css('visibility', 'visible');
+          $('#missed').show();
+          $('#made').hide();
         }
 
     //display the score in the div at bottom of player1
@@ -233,13 +227,13 @@ $('#shoot2').click(function() {
         if(player2Points > long2Avg) {
           player2Points = 2;
           player2Count += player2Points;
-          $('#missed').css('visibility', 'hidden');
-          $('#made').css('visibility', 'visible');
+          $('#made').show();
+          $('#missed').hide();
         }
         else {
           player2Points = 0;
-          $('#made').css('visibility', 'hidden');
-          $('#missed').css('visibility', 'visible');
+          $('#missed').show();
+          $('#made').hide();
         }
 
     }
@@ -250,13 +244,13 @@ $('#shoot2').click(function() {
           //if it's 3 or 0, add it to player1Count
           player2Points = 3;
           player2Count += player2Points;
-          $('#missed').css('visibility', 'hidden');
-          $('#made').css('visibility', 'visible');
+          $('#made').show();
+          $('#missed').hide();
         }
         else {
           player2Points = 0;
-          $('#made').css('visibility', 'hidden');
-          $('#missed').css('visibility', 'visible');
+          $('#missed').show();
+          $('#made').hide();
         }
 
     }
@@ -266,13 +260,13 @@ $('#shoot2').click(function() {
         if(player2Points > long3Avg) {
           player2Points = 3;
           player2Count += player2Points;
-          $('#missed').css('visibility', 'hidden');
-          $('#made').css('visibility', 'visible');
+          $('#made').show();
+          $('#missed').hide();
         }
         else {
           player2Points = 0;
-          $('#made').css('visibility', 'hidden');
-          $('#missed').css('visibility', 'visible');
+          $('#missed').show();
+          $('#made').hide();
         }
 
     }
@@ -283,8 +277,6 @@ $('#shoot2').click(function() {
     // $("#player1Shot").prop('disabled', false);
     checkForWinner(player1Count, player2Count);
     displayMessage("It's Player 1's turn to shoot!");
-
-
 
   });
 
@@ -301,13 +293,17 @@ $('#shoot2').click(function() {
     if(player1Count >=6) {
       winresult = true;
       $('#playerlist h2').text("Congrats Player 1, you win!");
-      displayMessage("Congrats Player 1, you win!");
+      $('#shoot1').hide();
+      $('#shoot2').hide();
+      $('#messages').hide()
     }
     else if(player2Count >= 6) {
       winresult = true;
       // return true;
       $('#playerlist h2').text("Congrats Player 2, you win!");
-      displayMessage("Congrats Player 2, you win!");
+      $('#shoot1').hide();
+      $('#shoot2').hide();
+      $('#messages').hide()
     }
   };
 

@@ -19,20 +19,23 @@ body {
 
 #messages {
   text-align: center;
+  clear: both;
   font-size: 30px;
-  color: #FA8320;
+  color: red;
   font-family: Abril Fatface;
 }
 
 #gifCentral {
   text-align: center;
-  /*height: 330px;
-  width: 500px;*/
+  width: 50%;
+  height: 300px;
+  position: static;
   margin-left: 360px;
+  margin-bottom: -50px;
 }
 
 #missed, #made {
- visibility: hidden;
+ display: none;
  text-align: center;
  max-height: 300px;
  width: auto;
@@ -44,9 +47,11 @@ body {
 
 #playerlist {
   text-align: center;
+  clear: both;
   height: 80px;
   width: 50%;
-  margin-left: 300px;
+  margin-left: 330px;
+  margin-bottom: 50px;
   background: #FA8320;
   font-family: Abril Fatface;
   border-radius: 10px;
@@ -62,9 +67,9 @@ body {
   float: left;
   text-align: center;
   background: #FA8320;
-  width: 35%;
-  height: 200px;
-  margin: 15px 50px 25px 70px;
+  width: 15%;
+  height: 220px;
+  margin-left: 25px;
   padding: 5px;
   border-radius: 10px;
   font-family: Abril Fatface;
@@ -72,12 +77,12 @@ body {
 }
 
 #player2 {
-  float: left;
+  float: right;
   text-align: center;
   background: #FA8320;
-  width: 35%;
-  height: 200px;
-  margin: 15px 50px 25px 70px;
+  width: 15%;
+  height: 220px;
+  margin-right: 25px;
   padding: 5px;
   border-radius: 10px;
   font-family: Abril Fatface;
