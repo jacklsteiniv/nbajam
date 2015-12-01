@@ -285,25 +285,29 @@ $('#shoot2').click(function() {
   //both player 1 and 2. Then, create and call back functions for dunk,
   //long2, corner3, and long3.
 
-
   //Checking for a winner if count >=21,
-  //this is called back in changeturn to see if a win has occurred.
+  //this is called back in shot functions to see if a win has occurred.
 
   function checkForWinner(player1Count, player2Count) {
-    if(player1Count >=6) {
+    if(player1Count >=21) {
       winresult = true;
       $('#playerlist h2').text("Congrats Player 1, you win!");
       $('#shoot1').hide();
       $('#shoot2').hide();
-      $('#messages').hide()
+      $('#messages').hide();
+      $('#made').hide();
+      $('#won').show();
+      // $('#gifCentral').append(img src = "http://www.theunticket.com/wp-content/uploads/2011/06/good_on_ya_mark_cuban.jpg");
     }
-    else if(player2Count >= 6) {
+    else if(player2Count >= 21) {
       winresult = true;
       // return true;
       $('#playerlist h2').text("Congrats Player 2, you win!");
       $('#shoot1').hide();
       $('#shoot2').hide();
-      $('#messages').hide()
+      $('#messages').hide();
+      $('#made').hide();
+      $('#won').show();
     }
   };
 

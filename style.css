@@ -34,7 +34,7 @@ body {
   margin-bottom: -50px;
 }
 
-#missed, #made {
+#missed, #made, #won {
  display: none;
  text-align: center;
  max-height: 300px;
