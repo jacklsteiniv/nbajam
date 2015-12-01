@@ -1,6 +1,6 @@
 header {
   text-align: center;
-  color: orange;
+  color: #FA8320;
   font-size: 40px;
   font-family: Abril Fatface;
   font-style: italic;
@@ -17,12 +17,17 @@ body {
 
 }
 
-#messages {
+#messages, #shotkey {
   text-align: center;
   clear: both;
   font-size: 30px;
-  color: red;
+  color: #FA8320;
+  background: black;
   font-family: Abril Fatface;
+  height: 40px;
+  width: 50%;
+  margin-left: 330px;
+  border-radius: 10px;
 }
 
 #gifCentral {
@@ -42,6 +47,17 @@ body {
  right: 300px;
  border-radius: 10px;
  opacity: 0.85;
+}
+
+#one, #two, #three, #four {
+  text-align: center;
+  display: visible;
+  width: 280px;
+  height: 220px;
+  margin-top: -270px;
+  margin-left: 20px;
+  border: #FA8320 2px solid;
+  border-radius: 10px;
 }
 
 #playerlist {

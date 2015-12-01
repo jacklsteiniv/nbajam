@@ -94,7 +94,8 @@ $(function(){
       $('#player2').css('background-color', '#b19cd9');
     }
 
-
+    $('#shotcharts').hide();
+    $('#shotkey').hide();
     $('#player2 h2').text($("#playersToChoose").val().toUpperCase());
     $('#playerlist h2').text("First one to 21 wins the game!");
     displayMessage("Game on! Player 1, start us off.");
