@@ -4,7 +4,7 @@ header {
   font-size: 40px;
   font-family: Abril Fatface;
   font-style: italic;
-  background: white;
+  background: radial-gradient(white, blue);
   opacity: 0.85;
   text-shadow: 2px 2px white;
 }
@@ -43,7 +43,6 @@ body {
  border-radius: 10px;
  opacity: 0.85;
 }
-
 
 #playerlist {
   text-align: center;
@@ -88,5 +87,3 @@ body {
   font-family: Abril Fatface;
   opacity: 0.85;
 }
-
-
