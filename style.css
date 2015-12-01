@@ -28,7 +28,7 @@ body {
   text-align: center;
   /*height: 330px;
   width: 500px;*/
-  margin-left: 400px;
+  margin-left: 360px;
 }
 
 #missed, #made {
@@ -37,12 +37,14 @@ body {
  max-height: 300px;
  width: auto;
  right: 300px;
+ border-radius: 10px;
+ opacity: 0.85;
 }
 
 
 #playerlist {
   text-align: center;
-  height: 100px;
+  height: 80px;
   width: 50%;
   margin-left: 300px;
   background: #FA8320;
@@ -62,7 +64,7 @@ body {
   background: #FA8320;
   width: 35%;
   height: 200px;
-  margin: 50px;
+  margin: 15px 50px 25px 70px;
   padding: 5px;
   border-radius: 10px;
   font-family: Abril Fatface;
@@ -75,7 +77,7 @@ body {
   background: #FA8320;
   width: 35%;
   height: 200px;
-  margin: 50px;
+  margin: 15px 50px 25px 70px;
   padding: 5px;
   border-radius: 10px;
   font-family: Abril Fatface;

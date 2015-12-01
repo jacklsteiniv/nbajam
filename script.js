@@ -62,7 +62,7 @@ $(function(){
     }
     else if($("#playersToChoose").val() == "durant") {
       playerOne = durant;
-      $('#player1').css('background-color', 'white');
+      $('#player1').css('background-color', '#007DC3');
     }
     else if($("#playersToChoose").val() == "kobe"){
       playerOne = kobe;
@@ -87,7 +87,7 @@ $(function(){
     }
     else if($("#playersToChoose").val() == "durant") {
       playerTwo = durant;
-      $('#player2').css('background-color', 'white');
+      $('#player2').css('background-color', '#007DC3');
     }
     else if($("#playersToChoose").val() == "kobe"){
       playerTwo = kobe;
@@ -99,6 +99,7 @@ $(function(){
     $('#playerlist h2').text("First one to 21 wins the game!");
     displayMessage("Game on! Player 1, start us off.");
     $(this).attr("disabled","disabled");
+    $('#playersToChoose').hide();
   });
 
 
@@ -309,35 +310,35 @@ $('#shoot2').click(function() {
 
   //Changing turns
 
-  function changeTurn() {
-    winresult = false;
-    // if(winresult = true) {
-    //   displayMessage("Congrats, " + turn + ", you won!");
-    //   winner = turn;
-    // }
-    // if(player1Count || player2Count >= 21) {
-    //   displayMessage("Game over!");
-    // }
-    if(turn == "player1") {
-      turn ==="player2";
-      displayMessage("It's Player 2's turn to shoot!");
-    }
-    else if(turn == "player2") {
-      turn ==="player1";
-      displayMessage("It's Player 1's turn to shoot!");
-    }
-  };
+  // function changeTurn() {
+  //   winresult = false;
+  //   // if(winresult = true) {
+  //   //   displayMessage("Congrats, " + turn + ", you won!");
+  //   //   winner = turn;
+  //   // }
+  //   // if(player1Count || player2Count >= 21) {
+  //   //   displayMessage("Game over!");
+  //   // }
+  //   if(turn == "player1") {
+  //     turn ==="player2";
+  //     displayMessage("It's Player 2's turn to shoot!");
+  //   }
+  //   else if(turn == "player2") {
+  //     turn ==="player1";
+  //     displayMessage("It's Player 1's turn to shoot!");
+  //   }
+  // };
 
 
   //Checking for a winner if count >=21,
   //this is called back in changeturn to see if a win has occurred.
 
-  // function checkForWinner(player1Count, player2Count) {
-  //   winresult = false;
-  //   if(player1Count || player2Count >= 6) {
-  //     winresult = true;
-  //     return true;
-  //   }
-  // };
+  function checkForWinner(player1Count, player2Count) {
+    winresult = false;
+    if(player1Count || player2Count >= 6) {
+      winresult = true;
+      return true;
+    }
+  };
 
 });
