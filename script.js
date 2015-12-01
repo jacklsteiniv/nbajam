@@ -3,7 +3,6 @@ $(function(){
   console.log("main js loaded.");
 
   turn = "player1";
-  winner = null;
   winresult = false;
   player1Count = 0;
   player2Count = 0;
@@ -43,15 +42,13 @@ $(function(){
   corner3Avg = 0.22;
   long3Avg = 0.21;
 
-  //Create jQuery click events for (1.) clicking on player,
-  //storing as variable (2.) choosing shot,
+  //Created jQuery click events for (1.) clicking on player,
+  //storing as variable object (2.) choosing shot,
   //and using Math.random to determine points total + counting score
-
 
   //Selecting your player, storing that variable
   $('#playerSelect1').click(function() {
-    //testing here by hard-coding LeBron
-    //if you select lebron, set playerOne equal.
+
     if($("#playersToChoose").val() == "lebron") {
       playerOne = lebron;
       $('#player1').css('background-color', '#a84551');
@@ -121,7 +118,7 @@ $(function(){
           $('#made').css('visibility', 'visible')
 
            //if it's 0 or 2, add it to the player1Count
-         player1Count = player1Count + player1Points;
+         player1Count += player1Points;
         }
         else {
             player1Points = 0;
@@ -132,7 +129,7 @@ $(function(){
         }
     //display the score in the div at bottom of player1
     $('#player1Score').text(player1Count);
-    // changeTurn();
+
     }
     //case #2: long 2. it's either 0 or 2.
     if($('#player1Shot').val() == 'long2') {
@@ -150,7 +147,7 @@ $(function(){
           $('#missed').css('visibility', 'visible');
 
         }
-    // changeTurn();
+
     }
     //case #3: corner 3. it's either 0 or 3.
     if($('#player1Shot').val() == 'corner3') {
@@ -169,7 +166,7 @@ $(function(){
           $('#missed').css('visibility', 'visible');
 
         }
-    // changeTurn();
+
     }
     //case #4: long 3. it's either 0 or 3.
     if($('#player1Shot').val() == 'long3') {
@@ -187,7 +184,7 @@ $(function(){
           $('#missed').css('visibility', 'visible');
 
         }
-    // changeTurn();
+
     }
     $('#player1 p').text("Player 1 scored " + player1Points + " points");
     //display the score in the div at bottom of player1
@@ -196,13 +193,13 @@ $(function(){
     // $(this).attr("disabled","disabled");
     // $("#player2Shot").prop('disabled', false);
     //hard-coded turn switch below
-    // checkForWinner();
-    // changeTurn();
+    checkForWinner(player1Count, player2Count);
     displayMessage("It's Player 2's turn to shoot!");
   });
 
 
-  //Now for player 2 - re-factor this, eventually
+  //Now for player 2 - re-factor this, eventually.
+  //Think: 'Shoot' function, takes in player
 
 $('#shoot2').click(function() {
     //case #1: dunk. it's either 0 or 2
@@ -215,7 +212,7 @@ $('#shoot2').click(function() {
           $('#made').css('visibility', 'visible');
          //if it's 0 or 2, add it to the player1Count
          player2Points = 2;
-         player2Count = player2Count + player2Points;
+         player2Count += player2Points;
 
          //try returning your values so they can be accessed by alert
         }
@@ -228,7 +225,6 @@ $('#shoot2').click(function() {
 
     //display the score in the div at bottom of player1
     $('#player2Score').text(player2Count);
-    // changeTurn();
 
     }
     //case #2: long 2. it's either 0 or 2.
@@ -245,7 +241,7 @@ $('#shoot2').click(function() {
           $('#made').css('visibility', 'hidden');
           $('#missed').css('visibility', 'visible');
         }
-    // changeTurn();
+
     }
     //case #3: corner 3. it's either 0 or 3.
     if($('#player2Shot').val() == 'corner3') {
@@ -262,7 +258,7 @@ $('#shoot2').click(function() {
           $('#made').css('visibility', 'hidden');
           $('#missed').css('visibility', 'visible');
         }
-    // changeTurn();
+
     }
     //case #4: long 3. it's either 0 or 3.
     if($('#player2Shot').val() == 'long3') {
@@ -278,16 +274,17 @@ $('#shoot2').click(function() {
           $('#made').css('visibility', 'hidden');
           $('#missed').css('visibility', 'visible');
         }
-    // changeTurn();
+
     }
     $('#player2 p').text("Player 2 scored " + player2Points + " points");
     //display the score in the div at bottom of player1
     $('#player2Score').text(player2Count);
     // $(this).attr("disabled","disabled")
     // $("#player1Shot").prop('disabled', false);
-    // checkForWinner();
-    // changeTurn();
+    checkForWinner(player1Count, player2Count);
     displayMessage("It's Player 1's turn to shoot!");
+
+
 
   });
 
@@ -296,48 +293,21 @@ $('#shoot2').click(function() {
   //both player 1 and 2. Then, create and call back functions for dunk,
   //long2, corner3, and long3.
 
-  //Making another shot selection
-
-  // function nextMove() {
-
-  //     if(winner !== null) {
-  //       displayMessage(winner + " already won the game");
-  //     } else {
-  //         changeTurn();
-  //     }
-
-  // };
-
-  //Changing turns
-
-  // function changeTurn() {
-  //   winresult = false;
-  //   // if(winresult = true) {
-  //   //   displayMessage("Congrats, " + turn + ", you won!");
-  //   //   winner = turn;
-  //   // }
-  //   // if(player1Count || player2Count >= 21) {
-  //   //   displayMessage("Game over!");
-  //   // }
-  //   if(turn == "player1") {
-  //     turn ==="player2";
-  //     displayMessage("It's Player 2's turn to shoot!");
-  //   }
-  //   else if(turn == "player2") {
-  //     turn ==="player1";
-  //     displayMessage("It's Player 1's turn to shoot!");
-  //   }
-  // };
-
 
   //Checking for a winner if count >=21,
   //this is called back in changeturn to see if a win has occurred.
 
   function checkForWinner(player1Count, player2Count) {
-    winresult = false;
-    if(player1Count || player2Count >= 6) {
+    if(player1Count >=6) {
       winresult = true;
-      return true;
+      $('#playerlist h2').text("Congrats Player 1, you win!");
+      displayMessage("Congrats Player 1, you win!");
+    }
+    else if(player2Count >= 6) {
+      winresult = true;
+      // return true;
+      $('#playerlist h2').text("Congrats Player 2, you win!");
+      displayMessage("Congrats Player 2, you win!");
     }
   };
 
