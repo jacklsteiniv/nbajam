@@ -1,17 +1,17 @@
 $(function(){
 
-  console.log("main js loaded.");
-  turn = "player1";
+  console.log('main js loaded.');
+  turn = 'player1';
   winresult = false;
   player1Count = 0;
   player2Count = 0;
 
   //Displaying messages
   function displayMessage(message) {
-    document.getElementById("messages").innerHTML = message;
+    document.getElementById('messages').innerHTML = message;
   }
 
-  displayMessage("Player 1 gets to begin! Pick a player to get started!");
+  displayMessage('Player 1 gets to begin! Pick a player to get started!');
 
   //Player object constructor below with standard stats
   function Player (dunk, long2, corner3, long3, defRating) {
@@ -52,19 +52,19 @@ $(function(){
   //Selecting your player, storing that variable
   $('#playerSelect1').click(function() {
 
-    if($("#playersToChoose").val() == "lebron") {
+    if($('#playersToChoose').val() == 'lebron') {
       playerOne = lebron;
       $('#player1').css('background-color', '#a84551');
     }
-    else if($("#playersToChoose").val() == "steph") {
+    else if($('#playersToChoose').val() == 'steph') {
       playerOne = steph;
       $('#player1').css('background-color', 'gold');
     }
-    else if($("#playersToChoose").val() == "durant") {
+    else if($('#playersToChoose').val() == 'durant') {
       playerOne = durant;
       $('#player1').css('background-color', '#007DC3');
     }
-    else if($("#playersToChoose").val() == "kobe"){
+    else if($('#playersToChoose').val() == 'kobe'){
       playerOne = kobe;
       $('#player1').css('background-color', '#b19cd9');
     }
@@ -76,29 +76,28 @@ $(function(){
   });
 
   $('#playerSelect2').click(function() {
-    if($("#playersToChoose").val() == "lebron") {
+    if($('#playersToChoose').val() == 'lebron') {
       playerTwo = lebron;
       $('#player2').css('background-color', '#a84551');
-
     }
-    else if($("#playersToChoose").val() == "steph") {
+    else if($('#playersToChoose').val() == 'steph') {
       playerTwo = steph;
       $('#player2').css('background-color', 'gold');
     }
-    else if($("#playersToChoose").val() == "durant") {
+    else if($('#playersToChoose').val() == 'durant') {
       playerTwo = durant;
       $('#player2').css('background-color', '#007DC3');
     }
-    else if($("#playersToChoose").val() == "kobe"){
+    else if($('#playersToChoose').val() == 'kobe'){
       playerTwo = kobe;
       $('#player2').css('background-color', '#b19cd9');
     }
 
     $('#shotcharts').hide();
     $('#shotkey').hide();
-    $('#player2 h2').text($("#playersToChoose").val().toUpperCase());
-    $('#playerlist h2').text("First one to 21 wins the game!");
-    displayMessage("Game on! Player 1, start us off.");
+    $('#player2 h2').text($('#playersToChoose').val().toUpperCase());
+    $('#playerlist h2').text('First one to 21 wins the game!');
+    displayMessage('Game on! Player 1, start us off.');
     $(this).attr("disabled","disabled");
     $('#playersToChoose').hide();
   });
@@ -178,7 +177,7 @@ $(function(){
           $('#made').hide();
         }
     }
-    $('#player1 p').text("Player 1 scored " + player1Points + " points");
+    $('#player1 p').text('Player 1 scored ' + player1Points + ' points');
     //display the score in the div at bottom of player1
     $('#player1Score').text(player1Count);
     checkForWinner(player1Count, player2Count);
@@ -251,7 +250,7 @@ $('#shoot2').click(function() {
           $('#made').hide();
         }
     }
-    $('#player2 p').text("Player 2 scored " + player2Points + " points");
+    $('#player2 p').text('Player 2 scored ' + player2Points + ' points');
     //display the score in the div at bottom of player1
     $('#player2Score').text(player2Count);
     checkForWinner(player1Count, player2Count);
@@ -268,23 +267,25 @@ $('#shoot2').click(function() {
   function checkForWinner(player1Count, player2Count) {
     if(player1Count >=21) {
       winresult = true;
-      $('#playerlist h2').text("Congrats Player 1, you win!");
+      $('#playerlist h2').text('Congrats Player 1, you win!');
       $('#shoot1').hide();
       $('#shoot2').hide();
       $('#messages').hide();
       $('#made').hide();
       $('#won').show();
-      // $('#gifCentral').append(img src = "http://www.theunticket.com/wp-content/uploads/2011/06/good_on_ya_mark_cuban.jpg");
+      // $('#player1Score').append("<img src = http://www.mapsofworld.com/pages/wp-content/uploads/sports//basketball/larry-obrien-trophy.jpg/>");
     }
     else if(player2Count >= 21) {
       winresult = true;
       // return true;
-      $('#playerlist h2').text("Congrats Player 2, you win!");
+      $('#playerlist h2').text('Congrats Player 2, you win!');
       $('#shoot1').hide();
       $('#shoot2').hide();
       $('#messages').hide();
       $('#made').hide();
       $('#won').show();
+      // $('#player2Score').append("<img src = http://www.mapsofworld.com/pages/wp-content/uploads/sports//basketball/larry-obrien-trophy.jpg/>");
+      // ("<img src="+$img+" />")
     }
   };
 

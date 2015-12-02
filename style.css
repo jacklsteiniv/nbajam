@@ -11,7 +11,7 @@ header {
 
 body {
   margin: 0 auto;
-  background-image: url("http://datcmedia.com/eslagowski/json-mustache/basketball.jpg");
+  background-image: url('http://datcmedia.com/eslagowski/json-mustache/basketball.jpg');
   background-size: cover;
   text-shadow: 1px 1px white;
 
@@ -54,8 +54,8 @@ body {
   display: visible;
   width: 280px;
   height: 220px;
-  margin-top: -270px;
-  margin-left: 20px;
+  margin-top: -400px;
+  margin-left: 25px;
   border: #FA8320 2px solid;
   border-radius: 10px;
 }
