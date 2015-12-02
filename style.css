@@ -22,13 +22,13 @@ body {
   clear: both;
   font-size: 30px;
   color: #FA8320;
-  background: black;
   font-family: Abril Fatface;
-  height: 40px;
+  height: 140px;
   width: 50%;
   margin-left: 330px;
   border-radius: 10px;
 }
+
 
 #gifCentral {
   text-align: center;
