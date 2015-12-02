@@ -20,12 +20,13 @@
 
       <!-- Shot chart images display at game start.
         Helps players determine who they want to use based on proficiency from various spots on the court. -->
+        <!-- Make these clickable for player selection -->
       <div id = "shotcharts">
-        <tr><img id = "one" src = "https://espngrantland.files.wordpress.com/2013/06/grant_r_lebron_shotchart11.jpg?w=694"/>
-            <img id = "two" src = "https://pbs.twimg.com/media/Bi8ySvfCQAAsJFG.jpg"/>
+        <tr><img id = "lebron" value = 'lebron' src = "https://espngrantland.files.wordpress.com/2013/06/grant_r_lebron_shotchart11.jpg?w=694"/>
+            <img id = "steph" src = "https://pbs.twimg.com/media/Bi8ySvfCQAAsJFG.jpg"/>
         </tr>
-        <tr><img id = "three" src = "https://espngrantland.files.wordpress.com/2013/10/grant_r_kevindurant_shotscore_115211.jpg?w=1024"/>
-            <img id = "four" src = "https://espngrantland.files.wordpress.com/2013/03/grant_e_kobeeff_lastyear_115211.jpg?w=694"/>
+        <tr><img id = "durant" src = "https://espngrantland.files.wordpress.com/2013/10/grant_r_kevindurant_shotscore_115211.jpg?w=1024"/>
+            <img id = "kobe" src = "https://espngrantland.files.wordpress.com/2013/03/grant_e_kobeeff_lastyear_115211.jpg?w=694"/>
         </tr>
       </div>
 
@@ -62,22 +63,9 @@
         </div>
       </div>
 
-      <img id = "shotkey" src = "shotchart-Key.jpg">
-
-
       <div id = "messages"></div>
 
-      <div id = "playerlist">
-        <h2>Pick a player below</h2>
-        <select id = "playersToChoose">
-          <option value="lebron">LeBron James</option>
-          <option value="steph">Steph Curry</option>
-          <option value="durant">Kevin Durant</option>
-          <option value="kobe">Kobe Bryant</option>
-          <input type="submit" id = "playerSelect1" value="Select Player 1">
-          <input type="submit" id = "playerSelect2" value="Select Player 2">
-        </select>
-      </div>
+      <img id = "shotkey" src = "shotchart-Key.jpg">
 
     </div>
 

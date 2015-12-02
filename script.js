@@ -5,6 +5,8 @@ $(function(){
   winresult = false;
   player1Count = 0;
   player2Count = 0;
+  playerOne = null;
+  playerTwo = null;
 
   //Displaying messages
   function displayMessage(message) {
@@ -50,57 +52,74 @@ $(function(){
   //and using Math.random to determine points total + counting score
 
   //Selecting your player, storing that variable
-  $('#playerSelect1').click(function() {
+  //Updated to reflect clicking on player shot charts
+  //to select, rather than picklist, for better UX.
+  if(playerOne == null && playerTwo == null) {
+    $('#lebron').click(function() {
+       playerOne = lebron;
+        $('#player1').css('background-color', '#a84551');
+        $('#player1 h2').text('LeBron');
+        displayMessage("Player 2, your turn to pick a player");
+        return;
+    });
+    $('#steph').click(function() {
+        playerOne = steph;
+        $('#player1').css('background-color', 'gold');
+        $('#player1 h2').text('Steph');
+        displayMessage("Player 2, your turn to pick a player");
+        return;
+    });
+    $('#durant').click(function() {
+        playerOne = durant;
+        $('#player1').css('background-color', '#007DC3');
+        $('#player1 h2').text('Durant');
+        displayMessage("Player 2, your turn to pick a player");
+        return;
+    });
+    $('#kobe').click(function() {
+        playerOne = kobe;
+        $('#player1').css('background-color', '#b19cd9');
+        $('#player1 h2').text('Kobe');
+        displayMessage("Player 2, your turn to pick a player");
+        return;
+    });
+  }
+  else if(playerOne = lebron & playerTwo == null) {
+    $('#lebron').click(function() {
+       playerTwo = lebron;
+        $('#player2').css('background-color', '#a84551');
+        $('#player2 h2').text('LeBron');
+        return;
 
-    if($('#playersToChoose').val() == 'lebron') {
-      playerOne = lebron;
-      $('#player1').css('background-color', '#a84551');
-    }
-    else if($('#playersToChoose').val() == 'steph') {
-      playerOne = steph;
-      $('#player1').css('background-color', 'gold');
-    }
-    else if($('#playersToChoose').val() == 'durant') {
-      playerOne = durant;
-      $('#player1').css('background-color', '#007DC3');
-    }
-    else if($('#playersToChoose').val() == 'kobe'){
-      playerOne = kobe;
-      $('#player1').css('background-color', '#b19cd9');
-    }
+    });
+    $('#steph').click(function() {
+        playerTwo = steph;
+        $('#player2').css('background-color', 'gold');
+        $('#player2 h2').text('Steph');
+        return;
 
-    $(this).attr("disabled","disabled");
-    displayMessage("Player 2, your turn to pick a player");
-    $('#player1 h2').text($("#playersToChoose").val().toUpperCase());
+    });
+    $('#durant').click(function() {
+        playerTwo = durant;
+        $('#player2').css('background-color', '#007DC3');
+        $('#player2 h2').text('Durant');
+        return;
 
-  });
-
-  $('#playerSelect2').click(function() {
-    if($('#playersToChoose').val() == 'lebron') {
-      playerTwo = lebron;
-      $('#player2').css('background-color', '#a84551');
-    }
-    else if($('#playersToChoose').val() == 'steph') {
-      playerTwo = steph;
-      $('#player2').css('background-color', 'gold');
-    }
-    else if($('#playersToChoose').val() == 'durant') {
-      playerTwo = durant;
-      $('#player2').css('background-color', '#007DC3');
-    }
-    else if($('#playersToChoose').val() == 'kobe'){
-      playerTwo = kobe;
-      $('#player2').css('background-color', '#b19cd9');
-    }
-
+    });
+    $('#kobe').click(function() {
+        playerTwo = kobe;
+        $('#player2').css('background-color', '#b19cd9');
+        return;
+    });
+  }
+  else if(playerOne != null && playerTwo != null) {
     $('#shotcharts').hide();
     $('#shotkey').hide();
-    $('#player2 h2').text($('#playersToChoose').val().toUpperCase());
     $('#playerlist h2').text('First one to 21 wins the game!');
     displayMessage('Game on! Player 1, start us off.');
     $(this).attr("disabled","disabled");
     $('#playersToChoose').hide();
-  });
+  }
 
 
   //Selecting your shot, running the probabilities, adding to count

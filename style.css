@@ -19,7 +19,7 @@ body {
 
 #messages, #shotkey {
   text-align: center;
-  clear: both;
+ /* clear: both;*/
   font-size: 30px;
   color: #FA8320;
   font-family: Abril Fatface;
@@ -49,7 +49,7 @@ body {
  opacity: 0.85;
 }
 
-#one, #two, #three, #four {
+#lebron, #steph, #durant, #kobe{
   text-align: center;
   display: visible;
   width: 280px;
@@ -60,23 +60,6 @@ body {
   border-radius: 10px;
 }
 
-#playerlist {
-  text-align: center;
-  clear: both;
-  height: 80px;
-  width: 50%;
-  margin-left: 330px;
-  margin-bottom: 50px;
-  background: #FA8320;
-  font-family: Abril Fatface;
-  border-radius: 10px;
-  opacity: 0.85;
-}
-
-#playersToChoose {
-  width: 200px;
-  height: 300px;
-}
 
 #player1 {
   float: left;
