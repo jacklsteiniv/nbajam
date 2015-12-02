@@ -17,19 +17,24 @@ body {
 
 }
 
-#messages, #shotkey {
+#messages, #playerlist  {
   text-align: center;
- /* clear: both;*/
+  clear: both;
   font-size: 30px;
   color: #FA8320;
   font-family: Abril Fatface;
-  height: 140px;
+  height: 100px;
   width: 50%;
   margin-left: 330px;
   border-radius: 10px;
 }
 
-
+#shotkey {
+  height: 150px;
+  width: 50%;
+  clear: both;
+  margin-left: 330px;
+}
 #gifCentral {
   text-align: center;
   width: 50%;
@@ -60,6 +65,9 @@ body {
   border-radius: 10px;
 }
 
+#lebron:hover, #steph:hover, #durant:hover, #kobe:hover {
+   border: 0px;
+}
 
 #player1 {
   float: left;

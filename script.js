@@ -54,7 +54,9 @@ $(function(){
   //Selecting your player, storing that variable
   //Updated to reflect clicking on player shot charts
   //to select, rather than picklist, for better UX.
-  if(playerOne == null && playerTwo == null) {
+
+  //Hover background glow effects
+
     $('#lebron').click(function() {
        playerOne = lebron;
         $('#player1').css('background-color', '#a84551');
@@ -83,7 +85,7 @@ $(function(){
         displayMessage("Player 2, your turn to pick a player");
         pickPlayerTwo();;
     });
-  }
+
 
   function pickPlayerTwo() {
     $('#lebron').click(function() {
@@ -115,9 +117,9 @@ $(function(){
   };
 
   function startGame() {
-    $('#shotcharts').hide();
+    $('.shotcharts').hide();
     $('#shotkey').hide();
-    $('#playerlist h2').text('First one to 21 wins the game!');
+    $('#playerlist').text('First one to 21 wins the game!');
     displayMessage('Game on! Player 1, start us off.');
     $(this).attr("disabled","disabled");
     $('#playersToChoose').hide();
@@ -288,18 +290,17 @@ $('#shoot2').click(function() {
   function checkForWinner(player1Count, player2Count) {
     if(player1Count >=21) {
       winresult = true;
-      $('#playerlist h2').text('Congrats Player 1, you win!');
+      $('#playerlist').text('Congrats Player 1, you win!');
       $('#shoot1').hide();
       $('#shoot2').hide();
-      $('#messages').hide();
       $('#made').hide();
       $('#won').show();
       // $('#player1Score').append("<img src = http://www.mapsofworld.com/pages/wp-content/uploads/sports//basketball/larry-obrien-trophy.jpg/>");
     }
     else if(player2Count >= 21) {
       winresult = true;
-      // return true;
-      $('#playerlist h2').text('Congrats Player 2, you win!');
+
+      $('#playerlist').text('Congrats Player 2, you win!');
       $('#shoot1').hide();
       $('#shoot2').hide();
       $('#messages').hide();
