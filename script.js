@@ -60,59 +60,61 @@ $(function(){
         $('#player1').css('background-color', '#a84551');
         $('#player1 h2').text('LeBron');
         displayMessage("Player 2, your turn to pick a player");
-        return;
+        pickPlayerTwo();
     });
     $('#steph').click(function() {
         playerOne = steph;
         $('#player1').css('background-color', 'gold');
         $('#player1 h2').text('Steph');
         displayMessage("Player 2, your turn to pick a player");
-        return;
+        pickPlayerTwo();
     });
     $('#durant').click(function() {
         playerOne = durant;
         $('#player1').css('background-color', '#007DC3');
         $('#player1 h2').text('Durant');
         displayMessage("Player 2, your turn to pick a player");
-        return;
+        pickPlayerTwo();;
     });
     $('#kobe').click(function() {
         playerOne = kobe;
         $('#player1').css('background-color', '#b19cd9');
         $('#player1 h2').text('Kobe');
         displayMessage("Player 2, your turn to pick a player");
-        return;
+        pickPlayerTwo();;
     });
   }
-  else if(playerOne = lebron & playerTwo == null) {
+
+  function pickPlayerTwo() {
     $('#lebron').click(function() {
        playerTwo = lebron;
         $('#player2').css('background-color', '#a84551');
         $('#player2 h2').text('LeBron');
-        return;
+        startGame();
 
     });
     $('#steph').click(function() {
         playerTwo = steph;
         $('#player2').css('background-color', 'gold');
         $('#player2 h2').text('Steph');
-        return;
+        startGame();
 
     });
     $('#durant').click(function() {
         playerTwo = durant;
         $('#player2').css('background-color', '#007DC3');
         $('#player2 h2').text('Durant');
-        return;
+        startGame();
 
     });
     $('#kobe').click(function() {
         playerTwo = kobe;
         $('#player2').css('background-color', '#b19cd9');
-        return;
+        startGame();
     });
-  }
-  else if(playerOne != null && playerTwo != null) {
+  };
+
+  function startGame() {
     $('#shotcharts').hide();
     $('#shotkey').hide();
     $('#playerlist h2').text('First one to 21 wins the game!');
