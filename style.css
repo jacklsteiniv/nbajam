@@ -58,10 +58,10 @@ body {
 }
 
 #shotkey {
-  height: 120px;
-  width: 30%;
+  height: 80px;
+  width: 20%;
   clear: both;
-  margin-left: 250px;
+  margin-left: 280px;
 }
 
 #gifCentral {
@@ -97,6 +97,21 @@ body {
 
 #Lebron:hover, #Steph:hover, #Durant:hover, #Kobe:hover {
    border: 0px;
+}
+
+.img-zoom {
+    width: 150px;
+    -webkit-transition: all .4s ease-in-out;
+    -moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -ms-transition: all .4s ease-in-out;
+}
+
+.transition {
+    -webkit-transform: scale(2);
+    -moz-transform: scale(2);
+    -o-transform: scale(2);
+    transform: scale(2);
 }
 
 .player1 {

@@ -6,6 +6,13 @@ $(function(){
   player1Count = 0;
   player2Count = 0;
 
+  //Zooming w/ img-zoom and transition classes
+  $('.img-zoom').hover(function() {
+        $(this).addClass('transition');
+
+    }, function() {
+        $(this).removeClass('transition');
+  });
 
   //Displaying messages
   function displayMessage(message) {
