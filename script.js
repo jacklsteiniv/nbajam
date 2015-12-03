@@ -11,6 +11,7 @@ $(function(){
     document.getElementById('messages').innerHTML = message;
   }
 
+
   displayMessage('Player 1 gets to begin! Pick a player to get started!');
 
   //Player object constructor below with standard stats
