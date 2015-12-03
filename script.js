@@ -5,10 +5,17 @@ $(function(){
   winresult = false;
   player1Count = 0;
   player2Count = 0;
-  // //Audio source reference variables
-  var cheer = $('#cheer');
-  var buzzer = $('#buzzer');
+  // //Audio source reference variables & functions
+  var buzzer = document.getElementsByTagName("audio")[0];
+  var cheer = document.getElementsByTagName("audio")[1];
 
+  function playBuzzers() {
+    buzzer.play();
+  }
+
+  function playCheers() {
+    cheer.play();
+  }
   //Zooming w/ img-zoom and transition classes
   $('.img-zoom').hover(function() {
         $(this).addClass('transition');
@@ -43,7 +50,7 @@ $(function(){
   //Kobe 12-13 numbers below, via Kirk Goldsberry shot charts
   kobe = new Player (0.60, 0.40, 0.32, 0.32, 0.60);
 
-  //defRating divides the player's score each time, essentially accounting
+  //defRating divides the opposing player's score each time, essentially accounting
   //for the strength of the opposing player's defense.
   //a player with a higher defRating mounts a stronger defense
 
@@ -107,11 +114,15 @@ $(function(){
     displayMessage('Game on! Player 1, start us off.');
     $(this).hide();
     $('#playersToChoose').hide();
-    cheer.play();
-    buzzer.play();
+    $('#shoot2').hide();
+    //buzzer at onset of game
+    playBuzzers();
+
   });
 
   $('#shoot1').click(function() {
+    $('#shoot2').show();
+    $('#shoot1').hide();
     //case #1: dunk. it's either 0 or 2
     if($('#player1Shot').val() == 'dunk') {
       //calculate probability: Math.random(dunk), 0 or 2
@@ -121,6 +132,7 @@ $(function(){
           //if your percentage is greater than league avg, you make it
           //and you get 2 points.
           player1Points = 2;
+          playCheers()
          //display the div for a MAKE: visible css
           $('#made').show();
           $('#missed').hide();
@@ -130,6 +142,7 @@ $(function(){
         }
         else {
             player1Points = 0;
+            playBuzzers()
             //display div for a MISS: append and show
             $('#missed').show();
             $('#made').hide();
@@ -140,12 +153,14 @@ $(function(){
       player1Points = Math.random() * playerOne.long2 / playerTwo.defRating;
         if(player1Points > long2Avg) {
           player1Points = 2;
+          playCheers()
           player1Count += player1Points;
           $('#made').show();
           $('#missed').hide();
         }
         else {
           player1Points = 0;
+          playBuzzers()
           $('#missed').show();
           $('#made').hide();
         }
@@ -156,12 +171,14 @@ $(function(){
         if(player1Points > corner3Avg) {
           //if it's 3 or 0, add it to player1Count
           player1Points = 3;
+          playCheers()
           player1Count += player1Points;
           $('#made').show();
           $('#missed').hide();
         }
         else {
           player1Points = 0;
+          playBuzzers()
           $('#missed').show();
           $('#made').hide();
         }
@@ -171,12 +188,14 @@ $(function(){
       player1Points = Math.random() * playerOne.long3 / playerTwo.defRating;
         if(player1Points > long3Avg) {
           player1Points = 3;
+          playCheers()
           player1Count += player1Points;
           $('#made').show();
           $('#missed').hide();
         }
         else {
           player1Points = 0;
+          playBuzzers()
           $('#missed').show();
           $('#made').hide();
         }
@@ -189,18 +208,22 @@ $(function(){
   });
 
   $('#shoot2').click(function() {
+    $('#shoot2').hide();
+    $('#shoot1').show();
       //case #1: dunk. it's either 0 or 2
       if($('#player2Shot').val() == 'dunk') {
         player2Points = Math.random() * playerTwo.dunk / playerOne.defRating;
         //calculate probability: Math.random(dunk), 0 or 2
           if(player2Points > dunkAvg) {
            player2Points = 2;
+           playCheers()
            player2Count += player2Points;
            $('#made').show();
            $('#missed').hide();
           }
           else {
               player2Points = 0;
+              playBuzzers()
               $('#missed').show();
               $('#made').hide();
           }
@@ -210,12 +233,14 @@ $(function(){
         player2Points = Math.random() * playerTwo.long2 / playerOne.defRating;
           if(player2Points > long2Avg) {
             player2Points = 2;
+            playCheers()
             player2Count += player2Points;
             $('#made').show();
             $('#missed').hide();
           }
           else {
             player2Points = 0;
+            playBuzzers()
             $('#missed').show();
             $('#made').hide();
           }
@@ -226,12 +251,14 @@ $(function(){
           if(player2Points > corner3Avg) {
             //if it's 3 or 0, add it to player1Count
             player2Points = 3;
+            playCheers()
             player2Count += player2Points;
             $('#made').show();
             $('#missed').hide();
           }
           else {
             player2Points = 0;
+            playBuzzers()
             $('#missed').show();
             $('#made').hide();
           }
@@ -241,18 +268,19 @@ $(function(){
         player2Points = Math.random() * playerTwo.long3 / playerOne.defRating;
           if(player2Points > long3Avg) {
             player2Points = 3;
+            playCheers()
             player2Count += player2Points;
             $('#made').show();
             $('#missed').hide();
           }
           else {
             player2Points = 0;
+            playBuzzers()
             $('#missed').show();
             $('#made').hide();
           }
       }
       $('.player2 p').text('Player 2 scored ' + player2Points + ' points');
-      //display the score in the div at bottom of player1
       $('#player2Score').text(player2Count);
       checkForWinner(player1Count, player2Count);
       displayMessage("It's Player 1's turn to shoot!");
@@ -263,6 +291,7 @@ $(function(){
   function checkForWinner(player1Count, player2Count) {
     if(player1Count >=21) {
       winresult = true;
+      playCheers()
       $('#playerlist h2').text('Congrats Player 1, you win!');
       $('#shoot1').hide();
       $('#shoot2').hide();
@@ -272,6 +301,7 @@ $(function(){
     }
     else if(player2Count >= 21) {
       winresult = true;
+      playCheers()
       $('#playerlist h2').text('Congrats Player 2, you win!');
       $('#shoot1').hide();
       $('#shoot2').hide();
