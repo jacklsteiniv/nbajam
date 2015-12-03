@@ -5,8 +5,7 @@ $(function(){
   winresult = false;
   player1Count = 0;
   player2Count = 0;
-  playerOne = null;
-  playerTwo = null;
+
 
   //Displaying messages
   function displayMessage(message) {
@@ -54,67 +53,47 @@ $(function(){
   //Selecting your player, storing that variable
   //Updated to reflect clicking on player shot charts
   //to select, rather than picklist, for better UX.
+ pickPlayer();
 
-  //Hover background glow effects
+  var switchPlayer = function(){
+    if (turn === 'player1') {
+      displayMessage("Player 2, your turn to pick a player");
+      turn = 'player2'
+    } else {
+      turn = 'player1'
+    }
+  }
 
-    $('#lebron').click(function() {
-       playerOne = lebron;
-        $('#player1').css('background-color', '#a84551');
-        $('#player1 h2').text('LeBron');
-        displayMessage("Player 2, your turn to pick a player");
-        pickPlayerTwo();
+  function pickPlayer() {
+    $('#Lebron').click(function() {
+        player1 = lebron;
+        $('#' + turn).addClass("lebron");
+        switchPlayer();
     });
-    $('#steph').click(function() {
-        playerOne = steph;
-        $('#player1').css('background-color', 'gold');
-        $('#player1 h2').text('Steph');
-        displayMessage("Player 2, your turn to pick a player");
-        pickPlayerTwo();
+    $('#Steph').click(function() {
+        player1 = steph;
+        $('#' + turn).addClass("steph");
+        switchPlayer();
     });
-    $('#durant').click(function() {
-        playerOne = durant;
-        $('#player1').css('background-color', '#007DC3');
-        $('#player1 h2').text('Durant');
-        displayMessage("Player 2, your turn to pick a player");
-        pickPlayerTwo();;
+    $('#Durant').click(function() {
+        player1 = durant;
+        $('#' + turn).addClass("durant");
+        switchPlayer();
     });
-    $('#kobe').click(function() {
-        playerOne = kobe;
-        $('#player1').css('background-color', '#b19cd9');
-        $('#player1 h2').text('Kobe');
-        displayMessage("Player 2, your turn to pick a player");
-        pickPlayerTwo();;
+    $('#Kobe').click(function() {
+        player1 = kobe;
+        $('#' + turn).addClass("kobe");
+        switchPlayer();
     });
 
-
-  function pickPlayerTwo() {
-    $('#lebron').click(function() {
-       playerTwo = lebron;
-        $('#player2').css('background-color', '#a84551');
-        $('#player2 h2').text('LeBron');
-        startGame();
-
-    });
-    $('#steph').click(function() {
-        playerTwo = steph;
-        $('#player2').css('background-color', 'gold');
-        $('#player2 h2').text('Steph');
-        startGame();
-
-    });
-    $('#durant').click(function() {
-        playerTwo = durant;
-        $('#player2').css('background-color', '#007DC3');
-        $('#player2 h2').text('Durant');
-        startGame();
-
-    });
-    $('#kobe').click(function() {
-        playerTwo = kobe;
-        $('#player2').css('background-color', '#b19cd9');
-        startGame();
-    });
-  };
+    if (turn === 'player2'){
+      // pickPlayer();
+      startGame();
+    }
+    else {
+    // startGame();
+  }
+  }
 
   function startGame() {
     $('.shotcharts').hide();
@@ -125,7 +104,6 @@ $(function(){
     $('#playersToChoose').hide();
   }
 
-
   //Selecting your shot, running the probabilities, adding to count
   //Re-factor this to work for shoot1 and shoot2
 
@@ -134,7 +112,7 @@ $(function(){
     if($('#player1Shot').val() == 'dunk') {
       //calculate probability: Math.random(dunk), 0 or 2
       // player1Points = Math.random * this.dunk;
-      player1Points = Math.random() * playerOne.dunk / playerTwo.defRating;
+      player1Points = Math.random() * player1.dunk / player2.defRating;
         if(player1Points > dunkAvg ) {
           //if your percentage is greater than league avg, you make it
           //and you get 2 points.
@@ -155,7 +133,7 @@ $(function(){
     }
     //case #2: long 2. it's either 0 or 2.
     if($('#player1Shot').val() == 'long2') {
-      player1Points = Math.random() * playerOne.long2 / playerTwo.defRating;
+      player1Points = Math.random() * player1.long2 / player2.defRating;
         if(player1Points > long2Avg) {
           player1Points = 2;
           player1Count += player1Points;
@@ -170,7 +148,7 @@ $(function(){
     }
     //case #3: corner 3. it's either 0 or 3.
     if($('#player1Shot').val() == 'corner3') {
-      player1Points = Math.random()* playerOne.corner3 / playerTwo.defRating;
+      player1Points = Math.random()* player1.corner3 / player2.defRating;
         if(player1Points > corner3Avg) {
           //if it's 3 or 0, add it to player1Count
           player1Points = 3;
@@ -187,7 +165,7 @@ $(function(){
     }
     //case #4: long 3. it's either 0 or 3.
     if($('#player1Shot').val() == 'long3') {
-      player1Points = Math.random() * playerOne.long3 / playerTwo.defRating;
+      player1Points = Math.random() * player1.long3 / player2.defRating;
         if(player1Points > long3Avg) {
           player1Points = 3;
           player1Count += player1Points;
@@ -213,7 +191,7 @@ $(function(){
 $('#shoot2').click(function() {
     //case #1: dunk. it's either 0 or 2
     if($('#player2Shot').val() == 'dunk') {
-      player2Points = Math.random() * playerTwo.dunk / playerOne.defRating;
+      player2Points = Math.random() * player2.dunk / player1.defRating;
       //calculate probability: Math.random(dunk), 0 or 2
         if(player2Points > dunkAvg) {
          player2Points = 2;
@@ -229,7 +207,7 @@ $('#shoot2').click(function() {
     }
     //case #2: long 2. it's either 0 or 2.
     if($('#player2Shot').val() == 'long2') {
-      player2Points = Math.random() * playerTwo.long2 / playerOne.defRating;
+      player2Points = Math.random() * player2.long2 / player1.defRating;
         if(player2Points > long2Avg) {
           player2Points = 2;
           player2Count += player2Points;
@@ -244,7 +222,7 @@ $('#shoot2').click(function() {
     }
     //case #3: corner 3. it's either 0 or 3.
     if($('#player2Shot').val() == 'corner3') {
-      player2Points = Math.random() * playerTwo.corner3 / playerOne.defRating;
+      player2Points = Math.random() * player2.corner3 / player1.defRating;
         if(player2Points > corner3Avg) {
           //if it's 3 or 0, add it to player1Count
           player2Points = 3;
@@ -260,7 +238,7 @@ $('#shoot2').click(function() {
     }
     //case #4: long 3. it's either 0 or 3.
     if($('#player2Shot').val() == 'long3') {
-      player2Points = Math.random() * playerTwo.long3 / playerOne.defRating;
+      player2Points = Math.random() * player2.long3 / player1.defRating;
         if(player2Points > long3Avg) {
           player2Points = 3;
           player2Count += player2Points;
@@ -293,13 +271,13 @@ $('#shoot2').click(function() {
       $('#playerlist').text('Congrats Player 1, you win!');
       $('#shoot1').hide();
       $('#shoot2').hide();
+      $('#messages').hide();
       $('#made').hide();
       $('#won').show();
       // $('#player1Score').append("<img src = http://www.mapsofworld.com/pages/wp-content/uploads/sports//basketball/larry-obrien-trophy.jpg/>");
     }
     else if(player2Count >= 21) {
       winresult = true;
-
       $('#playerlist').text('Congrats Player 2, you win!');
       $('#shoot1').hide();
       $('#shoot2').hide();
@@ -307,7 +285,7 @@ $('#shoot2').click(function() {
       $('#made').hide();
       $('#won').show();
       // $('#player2Score').append("<img src = http://www.mapsofworld.com/pages/wp-content/uploads/sports//basketball/larry-obrien-trophy.jpg/>");
-      // ("<img src="+$img+" />")
+
     }
   };
 
