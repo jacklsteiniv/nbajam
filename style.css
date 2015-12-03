@@ -95,16 +95,12 @@ body {
   border-radius: 10px;
 }
 
-#Lebron:hover, #Steph:hover, #Durant:hover, #Kobe:hover {
-   border: 0px;
-}
-
 .img-zoom {
-    width: 150px;
-    -webkit-transition: all .4s ease-in-out;
-    -moz-transition: all .4s ease-in-out;
-    -o-transition: all .4s ease-in-out;
-    -ms-transition: all .4s ease-in-out;
+    width: 120px;
+    -webkit-transition: all .35s ease-in-out;
+    -moz-transition: all .35s ease-in-out;
+    -o-transition: all .35s ease-in-out;
+    -ms-transition: all .35s ease-in-out;
 }
 
 .transition {
@@ -125,6 +121,7 @@ body {
   border-radius: 10px;
   font-family: 'Roboto Condensed', sans-serif;
   opacity: 0.85;
+  z-index: -1;
 }
 
 .player2 {
@@ -138,4 +135,5 @@ body {
   border-radius: 10px;
   font-family: 'Roboto Condensed', sans-serif;
   opacity: 0.85;
+  z-index: -1;
 }
