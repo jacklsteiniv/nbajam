@@ -6,8 +6,8 @@ $(function(){
   player1Count = 0;
   player2Count = 0;
   // //Audio source reference variables
-  // var cheer = $('#cheer');
-  // var buzzer = $('#buzzer');
+  var cheer = $('#cheer');
+  var buzzer = $('#buzzer');
 
   //Zooming w/ img-zoom and transition classes
   $('.img-zoom').hover(function() {
@@ -107,6 +107,8 @@ $(function(){
     displayMessage('Game on! Player 1, start us off.');
     $(this).hide();
     $('#playersToChoose').hide();
+    cheer.play();
+    buzzer.play();
   });
 
   $('#shoot1').click(function() {
