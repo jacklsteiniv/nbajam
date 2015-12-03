@@ -9,7 +9,6 @@ header {
   text-shadow: 2px 2px white;
 }
 
-
 body {
   margin: 0 auto;
   background-image: url('http://datcmedia.com/eslagowski/json-mustache/basketball.jpg');
@@ -18,19 +17,44 @@ body {
 
 }
 
-#messages, #shotkey {
+#messages {
   text-align: center;
   clear: both;
   font-size: 30px;
   color: #FA8320;
-  background: black;
   font-family: Abril Fatface;
-  height: 40px;
+  height: 50px;
   width: 50%;
   margin-left: 330px;
+  margin-top: 60px;
   border-radius: 10px;
 }
 
+#playerlist {
+  text-align: center;
+  clear: both;
+  height: 80px;
+  width: 50%;
+  margin-left: 330px;
+  margin-top: -20px;
+  background: #FA8320;
+  font-family: Abril Fatface;
+  border-radius: 10px;
+  opacity: 0.85;
+}
+
+#playersToChoose, #playerSelect1, #playerSelect2 {
+  width: 120px;
+  height: 20px;
+}
+
+#shotkey {
+  height: 120px;
+  width: 30%;
+  clear: both;
+  margin-left: 250px;
+  /*margin-top: -300px;*/
+}
 #gifCentral {
   text-align: center;
   width: 50%;
@@ -50,7 +74,8 @@ body {
  opacity: 0.85;
 }
 
-#one, #two, #three, #four {
+/*Capitalized ID names = the shot chart boxes.*/
+#Lebron, #Steph, #Durant, #Kobe{
   text-align: center;
   display: visible;
   width: 280px;
@@ -61,22 +86,26 @@ body {
   border-radius: 10px;
 }
 
-#playerlist {
-  text-align: center;
-  clear: both;
-  height: 80px;
-  width: 50%;
-  margin-left: 330px;
-  margin-bottom: 50px;
-  background: #FA8320;
-  font-family: Abril Fatface;
-  border-radius: 10px;
-  opacity: 0.85;
+#Lebron:hover, #Steph:hover, #Durant:hover, #Kobe:hover {
+   border: 0px;
 }
 
-#playersToChoose {
-  width: 200px;
-  height: 300px;
+/*Lower case class names = the Player 1 and Player 2 div coloration.*/
+
+.lebron {
+  background: #a84551;
+}
+
+.steph {
+  background: #ffd700;
+}
+
+.durant {
+  background: #007dc3;
+}
+
+.kobe {
+  background: #b19cd9;
 }
 
 #player1 {

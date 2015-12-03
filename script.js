@@ -6,11 +6,11 @@ $(function(){
   player1Count = 0;
   player2Count = 0;
 
+
   //Displaying messages
   function displayMessage(message) {
     document.getElementById('messages').innerHTML = message;
   }
-
 
   displayMessage('Player 1 gets to begin! Pick a player to get started!');
 
@@ -49,6 +49,8 @@ $(function(){
   //Created jQuery click events for (1.) clicking on player,
   //storing as variable object (2.) choosing shot,
   //and using Math.random to determine points total + counting score
+
+  //Selecting your player, storing that variable
 
   //Selecting your player, storing that variable
   $('#playerSelect1').click(function() {
@@ -94,7 +96,7 @@ $(function(){
       $('#player2').css('background-color', '#b19cd9');
     }
 
-    $('#shotcharts').hide();
+    $('.shotcharts').hide();
     $('#shotkey').hide();
     $('#player2 h2').text($('#playersToChoose').val().toUpperCase());
     $('#playerlist h2').text('First one to 21 wins the game!');
@@ -103,6 +105,7 @@ $(function(){
     $('#playersToChoose').hide();
   });
 
+  //END UX experimentation
 
   //Selecting your shot, running the probabilities, adding to count
   //Re-factor this to work for shoot1 and shoot2
@@ -278,7 +281,6 @@ $('#shoot2').click(function() {
     }
     else if(player2Count >= 21) {
       winresult = true;
-      // return true;
       $('#playerlist h2').text('Congrats Player 2, you win!');
       $('#shoot1').hide();
       $('#shoot2').hide();
@@ -286,7 +288,7 @@ $('#shoot2').click(function() {
       $('#made').hide();
       $('#won').show();
       // $('#player2Score').append("<img src = http://www.mapsofworld.com/pages/wp-content/uploads/sports//basketball/larry-obrien-trophy.jpg/>");
-      // ("<img src="+$img+" />")
+
     }
   };
 

@@ -9,7 +9,6 @@
   <body>
     <header>NBA Jam Lucky7s</header>
 
-
     <div class="container">
       <!-- GIFS illustrating a made/missed shot & win all go here -->
       <!-- Hide until shot is made, missed or game is won; jQuery -->
@@ -21,12 +20,12 @@
 
       <!-- Shot chart images display at game start.
         Helps players determine who they want to use based on proficiency from various spots on the court. -->
-      <div id = "shotcharts">
-        <tr><img id = "one" src = "https://espngrantland.files.wordpress.com/2013/06/grant_r_lebron_shotchart11.jpg?w=694"/>
-            <img id = "two" src = "https://pbs.twimg.com/media/Bi8ySvfCQAAsJFG.jpg"/>
+      <div class = "shotcharts">
+        <tr><img id = "Lebron" value = 'lebron' src = "https://espngrantland.files.wordpress.com/2013/06/grant_r_lebron_shotchart11.jpg?w=694"/>
+            <img id = "Steph" src = "https://pbs.twimg.com/media/Bi8ySvfCQAAsJFG.jpg"/>
         </tr>
-        <tr><img id = "three" src = "https://espngrantland.files.wordpress.com/2013/10/grant_r_kevindurant_shotscore_115211.jpg?w=1024"/>
-            <img id = "four" src = "https://espngrantland.files.wordpress.com/2013/03/grant_e_kobeeff_lastyear_115211.jpg?w=694"/>
+        <tr><img id = "Durant" src = "https://espngrantland.files.wordpress.com/2013/10/grant_r_kevindurant_shotscore_115211.jpg?w=1024"/>
+            <img id = "Kobe" src = "https://espngrantland.files.wordpress.com/2013/03/grant_e_kobeeff_lastyear_115211.jpg?w=694"/>
         </tr>
       </div>
 
@@ -63,7 +62,7 @@
         </div>
       </div>
 
-      <div id = "shotkey">Key: Red = 'hot', blue = 'cold'</div>
+      <img id = "shotkey" src = "shotchart-Key.jpg">
 
       <div id = "messages"></div>
 
@@ -79,10 +78,13 @@
         </select>
       </div>
 
+
+
     </div>
 
     <footer></footer>
     <script src='https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <!-- Note: script is the main branch, scriptTWO is UX experiment -->
     <script src='script.js'></script>
   </body>
 </html>
