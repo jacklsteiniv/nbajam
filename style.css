@@ -16,54 +16,6 @@ body {
 
 }
 
-#messages {
-  text-align: center;
-  clear: both;
-  font-size: 30px;
-  color: #FA8320;
-  font-family: 'Roboto Condensed', sans-serif;
-  height: 50px;
-  width: 50%;
-  margin-left: 330px;
-  margin-top: 60px;
-  border-radius: 10px;
-}
-
-#playerlist {
-  text-align: center;
-  clear: both;
-  height: 60px;
-  width: 50%;
-  margin-left: 330px;
-  margin-top: -20px;
-  background: #FA8320;
-  font-family: 'Roboto Condensed', sans-serif;
-  border-radius: 10px;
-  opacity: 0.85;
-}
-
-#playerlist h2 {
-  margin-bottom: -5px;
-}
-
-
-#playersToChoose, #playerSelect1, #playerSelect2 {
-  width: 120px;
-  height: 20px;
-}
-
-#player1Score, #player2Score {
-  font-size: 20px;
-  font-family: 'Roboto Condensed', sans-serif;
-}
-
-#shotkey {
-  height: 80px;
-  width: 20%;
-  clear: both;
-  margin-left: 280px;
-}
-
 #gifCentral {
   text-align: center;
   width: 50%;
@@ -83,7 +35,6 @@ body {
  opacity: 0.85;
 }
 
-/*Capitalized ID names = the shot chart boxes.*/
 #Lebron, #Steph, #Durant, #Kobe{
   text-align: center;
   display: visible;
@@ -136,4 +87,52 @@ body {
   font-family: 'Roboto Condensed', sans-serif;
   opacity: 0.85;
   z-index: -1;
+}
+
+#player1Score, #player2Score {
+  font-size: 20px;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+#shotkey {
+  height: 80px;
+  width: 20%;
+  clear: both;
+  margin-left: 280px;
+}
+
+#messages {
+  text-align: center;
+  clear: both;
+  font-size: 30px;
+  color: #FA8320;
+  font-family: 'Roboto Condensed', sans-serif;
+  height: 50px;
+  width: 50%;
+  margin-left: 330px;
+  margin-top: 60px;
+  border-radius: 10px;
+}
+
+#playerlist {
+  text-align: center;
+  clear: both;
+  height: 60px;
+  width: 50%;
+  margin-left: 330px;
+  margin-top: -20px;
+  background: #FA8320;
+  font-family: 'Roboto Condensed', sans-serif;
+  border-radius: 10px;
+  opacity: 0.85;
+}
+
+#playerlist h2 {
+  margin-bottom: -5px;
+}
+
+
+#playersToChoose, #playerSelect1, #playerSelect2 {
+  width: 120px;
+  height: 20px;
 }
