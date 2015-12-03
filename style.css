@@ -2,8 +2,7 @@ header {
   text-align: center;
   color: #FA8320;
   font-size: 40px;
-  font-family: Abril Fatface;
-  font-style: italic;
+  font-family: 'Roboto Condensed', sans-serif;
   background: radial-gradient(white, blue);
   opacity: 0.85;
   text-shadow: 2px 2px white;
@@ -22,7 +21,7 @@ body {
   clear: both;
   font-size: 30px;
   color: #FA8320;
-  font-family: Abril Fatface;
+  font-family: 'Roboto Condensed', sans-serif;
   height: 50px;
   width: 50%;
   margin-left: 330px;
@@ -33,19 +32,29 @@ body {
 #playerlist {
   text-align: center;
   clear: both;
-  height: 80px;
+  height: 60px;
   width: 50%;
   margin-left: 330px;
   margin-top: -20px;
   background: #FA8320;
-  font-family: Abril Fatface;
+  font-family: 'Roboto Condensed', sans-serif;
   border-radius: 10px;
   opacity: 0.85;
 }
 
+#playerlist h2 {
+  margin-bottom: -5px;
+}
+
+
 #playersToChoose, #playerSelect1, #playerSelect2 {
   width: 120px;
   height: 20px;
+}
+
+#player1Score, #player2Score {
+  font-size: 20px;
+  font-family: 'Roboto Condensed', sans-serif;
 }
 
 #shotkey {
@@ -53,8 +62,8 @@ body {
   width: 30%;
   clear: both;
   margin-left: 250px;
-  /*margin-top: -300px;*/
 }
+
 #gifCentral {
   text-align: center;
   width: 50%;
@@ -90,25 +99,7 @@ body {
    border: 0px;
 }
 
-/*Lower case class names = the Player 1 and Player 2 div coloration.*/
-
-.lebron {
-  background: #a84551;
-}
-
-.steph {
-  background: #ffd700;
-}
-
-.durant {
-  background: #007dc3;
-}
-
-.kobe {
-  background: #b19cd9;
-}
-
-#player1 {
+.player1 {
   float: left;
   text-align: center;
   background: #FA8320;
@@ -117,11 +108,11 @@ body {
   margin-left: 25px;
   padding: 5px;
   border-radius: 10px;
-  font-family: Abril Fatface;
+  font-family: 'Roboto Condensed', sans-serif;
   opacity: 0.85;
 }
 
-#player2 {
+.player2 {
   float: right;
   text-align: center;
   background: #FA8320;
@@ -130,6 +121,6 @@ body {
   margin-right: 25px;
   padding: 5px;
   border-radius: 10px;
-  font-family: Abril Fatface;
+  font-family: 'Roboto Condensed', sans-serif;
   opacity: 0.85;
 }

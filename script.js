@@ -57,51 +57,52 @@ $(function(){
 
     if($('#playersToChoose').val() == 'lebron') {
       playerOne = lebron;
-      $('#player1').css('background-color', '#a84551');
+      $('.player1').css('background-color', '#a84551');
     }
     else if($('#playersToChoose').val() == 'steph') {
       playerOne = steph;
-      $('#player1').css('background-color', 'gold');
+      $('.player1').css('background-color', 'gold');
     }
     else if($('#playersToChoose').val() == 'durant') {
       playerOne = durant;
-      $('#player1').css('background-color', '#007DC3');
+      $('.player1').css('background-color', '#007DC3');
     }
     else if($('#playersToChoose').val() == 'kobe'){
       playerOne = kobe;
-      $('#player1').css('background-color', '#b19cd9');
+      $('.player1').css('background-color', '#b19cd9');
     }
-
-    $(this).attr("disabled","disabled");
+    $(this).hide();
+    // $(this).attr("disabled","disabled");
     displayMessage("Player 2, your turn to pick a player");
-    $('#player1 h2').text($("#playersToChoose").val().toUpperCase());
+    $('.player1 h2').text($("#playersToChoose").val().toUpperCase());
 
   });
 
   $('#playerSelect2').click(function() {
     if($('#playersToChoose').val() == 'lebron') {
       playerTwo = lebron;
-      $('#player2').css('background-color', '#a84551');
+      $('.player2').css('background-color', '#a84551');
     }
     else if($('#playersToChoose').val() == 'steph') {
       playerTwo = steph;
-      $('#player2').css('background-color', 'gold');
+      $('.player2').css('background-color', 'gold');
     }
     else if($('#playersToChoose').val() == 'durant') {
       playerTwo = durant;
-      $('#player2').css('background-color', '#007DC3');
+      $('.player2').css('background-color', '#007DC3');
     }
     else if($('#playersToChoose').val() == 'kobe'){
       playerTwo = kobe;
-      $('#player2').css('background-color', '#b19cd9');
+      $('.player2').css('background-color', '#b19cd9');
     }
 
     $('.shotcharts').hide();
     $('#shotkey').hide();
-    $('#player2 h2').text($('#playersToChoose').val().toUpperCase());
+    $('.player2 h2').text($('#playersToChoose').val().toUpperCase());
     $('#playerlist h2').text('First one to 21 wins the game!');
     displayMessage('Game on! Player 1, start us off.');
-    $(this).attr("disabled","disabled");
+    $(this).hide();
+    // $(this).attr("disabled","disabled");
     $('#playersToChoose').hide();
   });
 
@@ -181,7 +182,7 @@ $(function(){
           $('#made').hide();
         }
     }
-    $('#player1 p').text('Player 1 scored ' + player1Points + ' points');
+    $('.player1 p').text('Player 1 scored ' + player1Points + ' points');
     //display the score in the div at bottom of player1
     $('#player1Score').text(player1Count);
     checkForWinner(player1Count, player2Count);
@@ -254,7 +255,7 @@ $('#shoot2').click(function() {
           $('#made').hide();
         }
     }
-    $('#player2 p').text('Player 2 scored ' + player2Points + ' points');
+    $('.player2 p').text('Player 2 scored ' + player2Points + ' points');
     //display the score in the div at bottom of player1
     $('#player2Score').text(player2Count);
     checkForWinner(player1Count, player2Count);
