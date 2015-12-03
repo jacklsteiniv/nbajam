@@ -20,7 +20,6 @@
 
       <!-- Shot chart images display at game start.
         Helps players determine who they want to use based on proficiency from various spots on the court. -->
-        <!-- Make these clickable for player selection -->
       <div class = "shotcharts">
         <tr><img id = "Lebron" value = 'lebron' src = "https://espngrantland.files.wordpress.com/2013/06/grant_r_lebron_shotchart11.jpg?w=694"/>
             <img id = "Steph" src = "https://pbs.twimg.com/media/Bi8ySvfCQAAsJFG.jpg"/>
@@ -64,14 +63,28 @@
       </div>
 
       <img id = "shotkey" src = "shotchart-Key.jpg">
+
       <div id = "messages"></div>
-      <div id = "playerlist"></div>
+
+      <div id = "playerlist">
+        <h2>Pick a player below</h2>
+        <select id = "playersToChoose">
+          <option value="lebron">LeBron James</option>
+          <option value="steph">Steph Curry</option>
+          <option value="durant">Kevin Durant</option>
+          <option value="kobe">Kobe Bryant</option>
+          <input type="submit" id = "playerSelect1" value="Select Player 1">
+          <input type="submit" id = "playerSelect2" value="Select Player 2">
+        </select>
+      </div>
+
 
 
     </div>
 
     <footer></footer>
     <script src='https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <!-- Note: script is the main branch, scriptTWO is UX experiment -->
     <script src='script.js'></script>
   </body>
 </html>

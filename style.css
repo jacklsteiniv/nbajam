@@ -17,23 +17,43 @@ body {
 
 }
 
-#messages, #playerlist  {
+#messages {
   text-align: center;
   clear: both;
   font-size: 30px;
-  color: blue;
+  color: #FA8320;
   font-family: Abril Fatface;
-  height: 100px;
+  height: 50px;
   width: 50%;
   margin-left: 330px;
+  margin-top: 60px;
   border-radius: 10px;
+}
+
+#playerlist {
+  text-align: center;
+  clear: both;
+  height: 80px;
+  width: 50%;
+  margin-left: 330px;
+  margin-top: -20px;
+  background: #FA8320;
+  font-family: Abril Fatface;
+  border-radius: 10px;
+  opacity: 0.85;
+}
+
+#playersToChoose, #playerSelect1, #playerSelect2 {
+  width: 120px;
+  height: 20px;
 }
 
 #shotkey {
   height: 120px;
-  width: 40%;
+  width: 30%;
   clear: both;
-  margin-left: 380px;
+  margin-left: 250px;
+  /*margin-top: -300px;*/
 }
 #gifCentral {
   text-align: center;
@@ -54,7 +74,7 @@ body {
  opacity: 0.85;
 }
 
-/*Capitalized names = the shot chart boxes.*/
+/*Capitalized ID names = the shot chart boxes.*/
 #Lebron, #Steph, #Durant, #Kobe{
   text-align: center;
   display: visible;
@@ -70,22 +90,22 @@ body {
    border: 0px;
 }
 
-/*Lower case names = the Player 1 and Player 2 assignments.*/
+/*Lower case class names = the Player 1 and Player 2 div coloration.*/
 
-#lebron {
-  background-color: #a84551;
+.lebron {
+  background: #a84551;
 }
 
-#steph {
-  background-color: gold;
+.steph {
+  background: #ffd700;
 }
 
-#durant {
-  background-color: #007dc3;
+.durant {
+  background: #007dc3;
 }
 
-#kobe {
-  background-color: #b19cd9
+.kobe {
+  background: #b19cd9;
 }
 
 #player1 {
