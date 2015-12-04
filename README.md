@@ -1,4 +1,4 @@
-# Project 1: NBA Jam Lucky7s
+# Project 1: NBA Jam - GA Edition
 
 #Introduction
 
